@@ -260,8 +260,8 @@ data:
 {{- if .Values.traccar.forward.url }}
         <entry key='forward.url'>{{ .Values.traccar.forward.url }}</entry>
 {{- end }}
-{{- if .Values.traccar.forward.json }}
-        <entry key='forward.json'>{{ .Values.traccar.forward.json }}</entry>
+{{- if .Values.traccar.forward.type }}
+        <entry key='forward.type'>{{ .Values.traccar.forward.type }}</entry>
 {{- end }}
 {{- end }}
 {{- end }}

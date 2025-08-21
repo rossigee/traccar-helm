@@ -89,7 +89,7 @@ traccar:
   #   lookupGroupsAttribute:
   # forward:
   #   url:
-  #   json:
+  #   type:
   # mail:
   # templates:
   # report:
