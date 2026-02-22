@@ -261,7 +261,12 @@ data:
         <entry key='forward.url'>{{ .Values.traccar.forward.url }}</entry>
 {{- end }}
 {{- if .Values.traccar.forward.type }}
-        <entry key='forward.type'>{{ .Values.traccar.forward.type }}</entry>
+{{- $type := .Values.traccar.forward.type | default "url" -}}
+{{- $allowed := list "url" "json" "amqp" "kafka" "mqtt" "redis" "wialon" -}}
+{{- if not (has $type $allowed) }}
+{{- fail (printf "forward.type '%s' is invalid. Allowed values: %v" $type $allowed) -}}
+{{- end }}
+        <entry key='forward.type'>{{ $type }}</entry>
 {{- end }}
 {{- end }}
 {{- end }}
