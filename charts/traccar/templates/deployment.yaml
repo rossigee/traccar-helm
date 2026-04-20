@@ -42,9 +42,9 @@ spec:
         - name: config
           configMap:
             name: {{ include "traccar.fullname" . }}
-{{- if or .Values.mysql.enabled (index .Values "redis-ha").enabled .Values.initContainers }}
+{{- if or .Values.mariadb.enabled (index .Values "redis-ha").enabled .Values.initContainers }}
       initContainers:
-{{- if .Values.mysql.enabled }}
+{{- if .Values.mariadb.enabled }}
         - name: wait-for-db
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
@@ -53,7 +53,7 @@ spec:
             - 'sh'
             - '-c'
             - >
-              until nc -z -w 2 {{ include "traccar.fullname" . }}-mysql 3306 && echo mysql ok;
+              until nc -z -w 2 {{ include "traccar.fullname" . }}-mariadb 3306 && echo mariadb ok;
                 do sleep 2;
               done
 {{- end }}
