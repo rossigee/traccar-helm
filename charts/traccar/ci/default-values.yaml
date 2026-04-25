@@ -104,8 +104,6 @@ traccar:
 
 mariadb:
   enabled: false
-    persistence:
-      enabled: false
 
 image:
   repository: traccar/traccar
