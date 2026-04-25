@@ -50,8 +50,7 @@ traccar:
     copyAttributes:
       enable: "false"
       # attributes:
-  database:
-    url: "jdbc:mariadb://nonexistent-db:3306/traccar"
+
   # globalsat:
     # format0:
     # format1:
