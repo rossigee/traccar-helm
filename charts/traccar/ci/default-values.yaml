@@ -816,6 +816,24 @@ externalService:
     port: 5228
     targetPort: thinkpower
 
+mariadb:
+  enabled: true
+  architecture: standalone
+  auth:
+    database: "traccar"
+    username: "traccar"
+    password: "traccar"
+  primary:
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
+      limits:
+        memory: "128Mi"
+        cpu: "200m"
+
 resources: {}
 
 nodeSelector:
