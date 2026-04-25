@@ -103,7 +103,25 @@ traccar:
   # sms:
 
 mariadb:
-  enabled: false
+  enabled: true
+  architecture: standalone
+  auth:
+    database: "traccar"
+    username: "traccar"
+    password: "traccar"
+  primary:
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "250m"
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+  secondary:
+    persistence:
+      enabled: false
 
 image:
   repository: traccar/traccar
