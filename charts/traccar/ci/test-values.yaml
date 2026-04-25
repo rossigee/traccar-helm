@@ -50,23 +50,9 @@ traccar:
     copyAttributes:
       enable: "true"
       attributes: "io83,io84,io87,io89"
-  # database:
-  #   driverFile:
-  #   driver:
-  #   url:
-  #   user:
-  #   password:
-  #   changelog:
-  #   checkConnection:
-  #   ignoreUnknown:
-  #   registerUnknown:
-  #     enable:
-  #     defaultGroupId:
-  #   xml:
-  #   saveOriginal:
-  #   selectDevicesAll:
-  #   insertPosition:
-  #   updateLatestPosition:
+  database:
+    driver: "org.h2.Driver"
+    url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
   # globalsat:
   #   format0:
   #   format1:
@@ -102,10 +88,7 @@ traccar:
   #   timeout:
   # sms:
 
-traccar:
-  database:
-    driver: "org.h2.Driver"
-    url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
+
 
 image:
   repository: traccar/traccar
