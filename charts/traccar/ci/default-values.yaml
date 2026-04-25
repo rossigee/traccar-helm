@@ -103,15 +103,7 @@ traccar:
   # sms:
 
 mariadb:
-  enabled: true
-  auth:
-    database: "traccar"
-    username: "traccar"
-    password: "traccar"
-  primary:
-    persistence:
-      enabled: false
-  secondary:
+  enabled: false
     persistence:
       enabled: false
 
