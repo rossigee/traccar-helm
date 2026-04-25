@@ -89,7 +89,6 @@ traccar:
   # sms:
 
 
-
 image:
   repository: traccar/traccar
   pullPolicy: IfNotPresent
