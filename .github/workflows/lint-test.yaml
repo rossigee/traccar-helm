@@ -41,10 +41,4 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        run: |
-          # Skip installation for MySQL->MariaDB migration PR to avoid CI resource issues
-          if [[ "$GITHUB_HEAD_REF" == "fix/mysql-to-mariadb" ]]; then
-            echo "Skipping chart installation for MySQL->MariaDB migration PR"
-            exit 0
-          fi
-          ct install --config ct.yaml
+        run: ct install --config ct.yaml
