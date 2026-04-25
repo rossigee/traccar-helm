@@ -53,7 +53,7 @@ spec:
             - 'sh'
             - '-c'
             - >
-              until nc -z -w 2 {{ include "traccar.fullname" . }}-mysql 3306 && echo mysql ok;
+              until nc -z -w 2 {{ include "traccar.fullname" . }}-mariadb 3306 && echo mariadb ok;
                 do sleep 2;
               done
 {{- end }}
