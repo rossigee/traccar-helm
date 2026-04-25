@@ -104,6 +104,7 @@ traccar:
 
 mariadb:
   enabled: true
+  architecture: standalone
   auth:
     database: "traccar"
     username: "traccar"
