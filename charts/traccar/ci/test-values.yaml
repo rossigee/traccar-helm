@@ -50,7 +50,8 @@ traccar:
     copyAttributes:
       enable: "true"
       attributes: "io83,io84,io87,io89"
-  # database: (using mariadb dependency below)
+  database:
+    url: "jdbc:mariadb://nonexistent-db:3306/traccar"
   # globalsat:
   #   format0:
   #   format1:
