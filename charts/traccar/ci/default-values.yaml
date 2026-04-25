@@ -85,8 +85,10 @@ traccar:
   # wialon:
   # status:
   #   timeout:
+  database:
+    driver: "org.h2.Driver"
+    url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
   # sms:
-
 
 image:
   repository: traccar/traccar
@@ -819,6 +821,18 @@ traccar:
   database:
     driver: "org.h2.Driver"
     url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
+
+mariadb:
+  enabled: true
+  architecture: standalone
+  auth:
+    database: "traccar"
+    username: "traccar"
+    password: "traccar"
+  primary:
+    persistence:
+      enabled: false
+    resourcesPreset: "nano"
 
 resources: {}
 
