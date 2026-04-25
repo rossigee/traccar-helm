@@ -42,9 +42,9 @@ spec:
         - name: config
           configMap:
             name: {{ include "traccar.fullname" . }}
-{{- if or .Values.mysql.enabled (index .Values "redis-ha").enabled .Values.initContainers }}
+{{- if or .Values.mariadb.enabled (index .Values "redis-ha").enabled .Values.initContainers }}
       initContainers:
-{{- if .Values.mysql.enabled }}
+{{- if .Values.mariadb.enabled }}
         - name: wait-for-db
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}

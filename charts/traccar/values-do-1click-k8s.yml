@@ -98,5 +98,5 @@ service:
       port: 5207
       targetPort: pst
 
-mysql:
+mariadb:
   enabled: true

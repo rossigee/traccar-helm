@@ -5,10 +5,10 @@ type: application
 version: 1.9.0
 appVersion: "5.10"
 dependencies:
-  - name: mysql
-    version: 9.4.8
+  - name: mariadb
+    version: 25.0.10
     repository: https://charts.bitnami.com/bitnami
-    condition: mysql.enabled
+    condition: mariadb.enabled
   - name: redis-ha
     version: 4.23.0
     repository: https://dandydeveloper.github.io/charts
