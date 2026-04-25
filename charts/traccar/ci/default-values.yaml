@@ -815,23 +815,10 @@ externalService:
     port: 5228
     targetPort: thinkpower
 
-mariadb:
-  enabled: true
-  architecture: standalone
-  auth:
-    database: "traccar"
-    username: "traccar"
-    password: "traccar"
-  primary:
-    persistence:
-      enabled: false
-    resources:
-      requests:
-        memory: "32Mi"
-        cpu: "50m"
-      limits:
-        memory: "64Mi"
-        cpu: "100m"
+traccar:
+  database:
+    driver: "org.h2.Driver"
+    url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
 
 resources: {}
 
