@@ -102,8 +102,10 @@ traccar:
   #   timeout:
   # sms:
 
-mariadb:
-  enabled: false
+traccar:
+  database:
+    driver: "org.h2.Driver"
+    url: "jdbc:h2:mem:traccar;DB_CLOSE_DELAY=-1"
 
 image:
   repository: traccar/traccar
