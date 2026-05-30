@@ -6,4 +6,4 @@ chart-dirs:
 chart-repos:
   - groundhog2k=https://groundhog2k.github.io/helm-charts/
   - dandydeveloper=https://dandydeveloper.github.io/charts
-helm-extra-args: --timeout 600s
+helm-extra-args: --timeout 900s
