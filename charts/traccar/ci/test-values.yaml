@@ -104,45 +104,6 @@ traccar:
 
 mysql:
   enabled: true
-  image:
-    tag: "8.4"
-  settings:
-    rootPassword:
-      value: "traccar"
-  userDatabase:
-    name:
-      value: "traccar"
-    user:
-      value: "traccar"
-    password:
-      value: "traccar"
-  storage:
-    requestedSize: ""
-  customStartupProbe:
-    tcpSocket:
-      port: 3306
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    failureThreshold: 30
-  customLivenessProbe:
-    tcpSocket:
-      port: 3306
-    initialDelaySeconds: 30
-    periodSeconds: 10
-    failureThreshold: 3
-  customReadinessProbe:
-    tcpSocket:
-      port: 3306
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    failureThreshold: 3
-  resources:
-    limits:
-      cpu: 500m
-      memory: 512Mi
-    requests:
-      cpu: 100m
-      memory: 256Mi
 
 image:
   repository: traccar/traccar

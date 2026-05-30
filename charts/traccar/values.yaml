@@ -104,6 +104,8 @@ traccar:
 
 mysql:
   enabled: true
+  image:
+    tag: "8.4"
   settings:
     rootPassword:
       value: "traccar"
@@ -116,6 +118,24 @@ mysql:
       value: "traccar"
   storage:
     requestedSize: ""
+  customStartupProbe:
+    tcpSocket:
+      port: 3306
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    failureThreshold: 30
+  customLivenessProbe:
+    tcpSocket:
+      port: 3306
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    failureThreshold: 3
+  customReadinessProbe:
+    tcpSocket:
+      port: 3306
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    failureThreshold: 3
 
 # NOTE: When using multiple replicas, you must configure broadcast.type and broadcast.address
 #       This can be done via configOverride. See https://www.traccar.org/configuration-file/#:~:text=attributes%20to%20log.-,broadcast.type,-config
