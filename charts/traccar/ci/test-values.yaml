@@ -111,6 +111,7 @@ mysql:
   primary:
     persistence:
       enabled: false
+    resourcesPreset: "nano"
   secondary:
     persistence:
       enabled: false
