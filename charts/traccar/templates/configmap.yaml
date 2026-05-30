@@ -155,7 +155,7 @@ data:
 {{- if or .Values.traccar.database .Values.mysql.enabled }}
 {{- if .Values.mysql.enabled }}
         <entry key='database.driver'>com.mysql.cj.jdbc.Driver</entry>
-        <entry key='database.url'>jdbc:mysql://{{ include "traccar.fullname" . }}-mysql:3306/{{ .Values.mysql.auth.database }}?serverTimezone=UTC&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+        <entry key='database.url'>jdbc:mysql://{{ include "traccar.fullname" . }}-mysql:3306/{{ .Values.mysql.userDatabase.name.value }}?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
 {{- else }}
 {{- if .Values.traccar.database.driverFile }}
         <entry key='database.driverFile'>{{ .Values.traccar.database.driverFile }}</entry>

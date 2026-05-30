@@ -1,9 +1,9 @@
 dependencies:
 - name: mysql
-  repository: https://charts.bitnami.com/bitnami
-  version: 12.3.5
+  repository: https://groundhog2k.github.io/helm-charts/
+  version: 3.1.0
 - name: redis-ha
   repository: https://dandydeveloper.github.io/charts
   version: 4.23.0
-digest: sha256:e6563a9f35752e68b69e51585a5d7d9b73c35a04f1b94fd6256a83f3c8d9f5f1
-generated: "2026-05-30T13:34:21.803749982+07:00"
+digest: sha256:35949e8af7524a768fcac37ea1fa7495827a7bdd826fe809473f9c7a4512cbfa
+generated: "2026-05-30T14:11:44.638823197+07:00"

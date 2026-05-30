@@ -104,16 +104,18 @@ traccar:
 
 mysql:
   enabled: true
-  auth:
-    database: "traccar"
-    username: "traccar"
-    password: "traccar"
-  primary:
-    persistence:
-      enabled: false
-  secondary:
-    persistence:
-      enabled: false
+  settings:
+    rootPassword:
+      value: "traccar"
+  userDatabase:
+    name:
+      value: "traccar"
+    user:
+      value: "traccar"
+    password:
+      value: "traccar"
+  storage:
+    requestedSize: ""
 
 # NOTE: When using multiple replicas, you must configure broadcast.type and broadcast.address
 #       This can be done via configOverride. See https://www.traccar.org/configuration-file/#:~:text=attributes%20to%20log.-,broadcast.type,-config

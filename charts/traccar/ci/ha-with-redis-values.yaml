@@ -6,6 +6,10 @@ deploymentStrategy:
     maxUnavailable: 25%
   type: RollingUpdate
 
+mysql:
+  image:
+    tag: "8.4"
+
 redis-ha:
   enabled: true
   # defaults to 3. but we wan't CI to run through in a reasonable time.
