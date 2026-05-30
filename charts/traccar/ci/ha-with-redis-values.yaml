@@ -9,6 +9,9 @@ deploymentStrategy:
 mysql:
   image:
     tag: "8.4"
+  startupProbe:
+    initialDelaySeconds: 30
+    failureThreshold: 60
 
 redis-ha:
   enabled: true

@@ -118,6 +118,9 @@ mysql:
       value: "traccar"
   storage:
     requestedSize: ""
+  startupProbe:
+    initialDelaySeconds: 30
+    failureThreshold: 60
   resources:
     limits:
       cpu: 500m
