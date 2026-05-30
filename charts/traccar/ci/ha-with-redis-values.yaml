@@ -9,9 +9,24 @@ deploymentStrategy:
 mysql:
   image:
     tag: "8.4"
-  startupProbe:
+  customStartupProbe:
+    tcpSocket:
+      port: 3306
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    failureThreshold: 30
+  customLivenessProbe:
+    tcpSocket:
+      port: 3306
     initialDelaySeconds: 30
-    failureThreshold: 60
+    periodSeconds: 10
+    failureThreshold: 3
+  customReadinessProbe:
+    tcpSocket:
+      port: 3306
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    failureThreshold: 3
 
 redis-ha:
   enabled: true
